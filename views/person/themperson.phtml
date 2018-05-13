@@ -1,0 +1,63 @@
+<br/>
+ <div class="content-wrapper">
+<div class="container-fluid">
+    
+        <div class="panel-heading">Thêm Person</div>
+        <div class="panel-body">
+            <?php if (! empty($error)) {?>
+                <div class="alert alert-danger" role="alert"><?= $error; ?></div>
+            <?php } ?>
+            <form class="form-horizontal" method="post" action="/Buoi15/person/add">
+                <div class="row" style="margin-left: 40px;">
+                <div class="form-group col-lg-6">
+                    <div>
+                        <label for="txtf" class=" control-label">Firstname:</label>
+                        <input type="text" class="form-control" id="txtf" name="firstname" placeholder="Nhập tên">
+                    </div>
+                    <div >
+                        <label for="txtm" class=" control-label ">middlename:</label>
+                        <input type="text" class="form-control" id="txtm" name="middlename" placeholder="Nhập chữ lót">
+                    </div>
+                    <div>
+                        <label for="txtl" class=" control-label ">LastName:</label>
+                        <input type="text" class="form-control" id="txtl" name="lastname" placeholder="Nhập Họ">
+                    </div>
+                     <div>
+                        <label for="txts" class=" control-label ">Số điện thoại:</label>
+                        <input type="texs" class="form-control" id="txtl" name="phone_number" placeholder="Nhập Số điện thoại">
+                    </div>
+
+                </div>
+
+                <div class="form-group col-lg-6">
+                    <div>
+                        <label for="txtemail" class="control-label">Email:</label>
+                        <input type="text" class="form-control" id="txtemail" name="email" placeholder="Nhập eamil">
+                    </div>
+                    
+                        <div class="radio">
+                          <label><input type="radio" name="gender" checked="checked" value="1"> Nam</label>
+                        </div>
+                        <div class="radio">
+                          <label><input type="radio" name="gender" value="0"> Nữ</label>
+                        </div>
+                    
+                    <div>
+                        <label  class="control-label">Ngày Sinh:</label>
+                            <input type="text" name="birthday">
+                                                
+                    </div>  
+                </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-sm-offset-2 col-sm-10">
+                        <button type="submit" class="btn btn-default">Lưu</button>
+                    </div>
+                </div>
+            </form>
+
+
+        </div>
+    </div>
+</div>
+</div>

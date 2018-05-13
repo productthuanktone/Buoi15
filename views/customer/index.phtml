@@ -1,0 +1,59 @@
+ <div class="content-wrapper">
+    <div class="container-fluid">
+      <!-- Breadcrumbs-->
+      <ol class="breadcrumb">
+        <li class="breadcrumb-item">
+          <a href="#">Dashboard</a>
+        </li>
+        <li class="breadcrumb-item active">Tables</li>
+      </ol>
+      <!-- Example DataTables Card-->
+      <div class="card mb-3">
+        <div class="card-header">
+          <i class="fa fa-table"></i> Data Table Example</div>
+        <div class="card-body">
+          <div class="table-responsive">
+            <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+               <thead>
+                        <tr>
+                            <th>No.</th>
+                            <th>id_KhachHang</th>
+                            <th>Tên</th>
+                            <th>Chữ lót</th>
+                            <th>Họ</th>
+                            <th>giới tính</th>
+                            <th>Ngay Sinh</th>
+                            <th>email</th>
+                            <th>số điện thoại</th>
+                            <th>Action</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <?php $i = 0; foreach($danhsachKH as $m) { ?>
+                            <tr>
+                                <td><?php echo ++$i; ?></td>
+                                <td><?= $m->id; ?></td>
+                                <td><?= $m->firstname; ?></td>
+                                <td><?= $m->middlename; ?></td>
+                                <td><?= $m->lastname; ?></td>
+                                <td><?= $m->gender; ?></td>
+                                <td><?= $m->birthdate; ?></td>
+                                <td><?= $m->email; ?></td>
+                                <td><?= $m->phone_number; ?></td>
+                                <td class="text-center">
+                                    <a  href="/Buoi15/customer/delete/<?= $m->id; ?>">
+                                        <i class="fa fa-trash"></i></a>
+                                        <a  href="/Buoi15/customer/editindex/<?= $m->id; ?>">
+                                        <i class="fa fa-pencil-square-o" aria-hidden="true"></i></a>
+                                      </td>
+                                </td>
+                                
+                            </tr>
+                        <?php } ?>
+                        </tbody>
+            </table>
+          </div>
+        </div>
+        <div class="card-footer small text-muted">Updated yesterday at 11:59 PM</div>
+      </div>
+    </div>

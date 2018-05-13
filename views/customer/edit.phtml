@@ -1,0 +1,67 @@
+<br/>
+ <div class="content-wrapper">
+<div class="container-fluid">
+    
+        <div class="panel-heading"><h2 style="color: blue;">Sửa Thông Tin Khách Hàng</h2></div>
+        <div class="panel-body">
+            <?php if (! empty($error)) {?>
+                <div class="alert alert-danger" role="alert"><?= $error; ?></div>
+            <?php } ?>
+            <form class="form-horizontal text-primary" method="post" action="/Buoi15/customer/edit">
+                <div class="row" style="margin-left: 40px;">
+                <div class="form-group col-md-6">
+                 <div class="form-group row ">
+                            <div class="col-md-6">
+                                <input type="text" class="form-control" id="id" name="id" readonly="False"  value="<?= $person->id; ?>"><br>
+                                 <label for="lastname" class=" control-label">Họ:</label>
+                                <input type="text" class="form-control" id="lastname" name="lastname"  value="<?= $person->lastname; ?>"><br>
+                                <label for="middlename" class="control-label">Chữ lót:</label>
+                                <input type="text" class="form-control" id="middlename" name="middlename" value="<?= $person->middlename;?>"><br>
+                                 <label for="firstname" class=" control-label">Tên:</label>
+                                <input type="text" class="form-control" id="firstname" name="firstname" value="<?= $person->firstname; ?>">
+                            </div>      
+                            <div class="col-md-6">
+                                <label for="gender" class=" control-label">Giới tính:</label>
+                               <select name="gender" id="gender">
+                                <?php if($person->gender==0) {?>
+                                   <option>Nữ</option>
+                                   <?php }else { ?>
+                                   <option>Nam</option>
+                                   <?php } ?>
+                               </select>
+                            </div>
+                        </div>
+                        
+                   
+                   
+                </div>
+                <div class="form-group col-md-6">
+                 <div class="form-group row ">
+                            <div class="col-md-6">
+                                 <label for="phone_number" class=" control-label">Số Điện Thoại:</label>
+                                <input type="text" class="form-control" id="phone_number" name="phone_number"  value="<?= $person->phone_number; ?>">
+                            </div>
+                            <div class="col-md-6">
+                                 <label for="email" class="control-label">Email:</label>
+                                <input type="text" class="form-control" id="email" name="email" value="<?= $person->email;?>">
+                            </div>
+                            <div class="col-md-6">
+                                 <label for="birthdate" class="control-label">Ngay:</label>
+                                <input type="date" class="form-control" id="birthdate" name="birthdate" value="<?= $person->birthdate; ?>">
+                            </div>
+                        </div>
+                       
+                </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-sm-offset-2 col-sm-10">
+                        <button type="submit" class="btn btn-default">Lưu</button>
+                    </div>
+                </div>
+            </form>
+
+
+        </div>
+    </div>
+</div>
+</div>

@@ -1,0 +1,59 @@
+ <div class="content-wrapper">
+    <div class="container-fluid">
+      <!-- Breadcrumbs-->
+      <ol class="breadcrumb">
+        <li class="breadcrumb-item">
+          <a href="#">Dashboard</a>
+        </li>
+        <li class="breadcrumb-item active">Tables</li>
+      </ol>
+      <!-- Example DataTables Card-->
+      <div class="card mb-3">
+        <div class="card-header">
+          <i class="fa fa-table"></i> Data Table Example</div>
+        <div class="card-body">
+          <div class="table-responsive">
+            <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+               <thead>
+                        <tr>
+                            <th>No.</th>
+                            <th>id</th>
+                            <th>creator_id</th>
+                            <th>customer_id</th>
+                            <th>from_airport</th>
+                            <th>to_airport</th>
+                            <th>ticket_class_code</th>
+                            <th>departure</th>
+                            <th>return</th>
+                            <th>note</th>
+                            <th>created_at</th>
+                            <th>Action</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <?php $i = 0; foreach($danhsachkhachhangyc as $m) { ?>
+                            <tr>
+                                <td><?php echo ++$i; ?></td>
+                                <td><?= $m->id; ?></td>
+                                <td><?= $m->creator_id; ?></td>
+                                <td><?= $m->customer_id; ?></td>
+                                <td><?= $m->from_airport; ?></td>
+                                <td><?= $m->to_airport; ?></td>
+                                <td><?= $m->ticket_class_code; ?></td>
+                                <td><?= $m->departure; ?></td>
+                                <td><?= $m->return; ?></td>
+                                <td><?= $m->note; ?></td>
+                                <td><?= $m->created_at; ?></td>
+                                <td class="text-center">
+                                    <a  href="/Buoi15/person/delete/<?= $m->id; ?>">
+                                        <i class="fa fa-trash"></i></a></td>
+                                </td>
+                                
+                            </tr>
+                        <?php } ?>
+                        </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
